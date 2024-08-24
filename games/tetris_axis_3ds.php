@@ -2,27 +2,30 @@
 $includepath = '../_inc';
 $dataUrl = "http://localhost/data";
 
-$title = "Feevo™ Blaze";
-$gameFeatureImage = $dataUrl."/images/games/feature_BL_FB.jpg";
+$title = "Tetris® Axis";
+$gameFeatureImage = $dataUrl."/images/games/feature_TA_3DS.jpg"; // feature_[game shortcode]_[platform]
 $game_movie = null; // must have all of these queries
-$play_link = 'http://apps.facebook.com/feevo-blaze/?kt_type=partner&amp;kt_st1=cross_promotion_ad&amp;kt_st2=tetrisonline_com_to_blaze&amp;kt_st3=game_lineup';
+$play_link = '';
 $game_slideshow = [
-	'screen_BL_FB_001.jpg',
-	'screen_BL_FB_002.jpg',
-	'screen_BL_FB_003.jpg',
-	'screen_BL_FB_004.jpg',
-	'screen_BL_FB_005.jpg',
-	'screen_BL_FB_006.jpg',
+	'screen_TA_3DS_001.jpg',
+	'screen_TA_3DS_002.jpg',
+	'screen_TA_3DS_003.jpg',
+	'screen_TA_3DS_004.jpg',
+	'screen_TA_3DS_005.jpg',
+	'screen_TA_3DS_006.jpg',
+	'screen_TA_3DS_007.jpg',
+	'screen_TA_3DS_008.jpg',
+	'screen_TA_3DS_009.jpg',
 ];
 
 // Max 3
 $recommendedGames = [
+	array('id' => 'tetris_party_wiiware', 'name' => 'Tetris® Party', 'image' => $dataUrl.'/images/game_TP_WW.png'),
+	array('id' => 'monster_fusion_facebook', 'name' => 'Monster Fusion', 'image' => $dataUrl.'/images/game_MFU_FB.png'),
 	array('id' => 'feevo_facebook', 'name' => 'Feevo™', 'image' => $dataUrl.'/images/game_FV_FB.png'),
-	array('id' => 'tetris_friends_facebook', 'name' => 'Tetris® Friends', 'image' => $dataUrl.'/images/game_TF_FB.png'),
-	array('id' => 'tetris_party_wii', 'name' => 'Tetris® Party Deluxe', 'image' => $dataUrl.'/images/game_TPD_WI.png'),
 ];
 ?>
-
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
 	<head>
@@ -43,25 +46,25 @@ $recommendedGames = [
 					
 			
 				<p>
-					All you need is 60 seconds a day to experience the frantic fun of <b>Feevo Blaze</b>. The game challenges players to make matches of 3 by moving tiles on a game board. When a match is made, other pieces fall into place, making more matches as tiles cascade onto the game board at a frenzied pace.  If players can make their moves quickly, they’ll earn big point bonuses as well as extra time to compile a huge score.
+					You've never seen the Tetris® game like this! Experience the world-famous puzzle gaming sensation loved by hundreds of millions around the globe—now in 3D, and loaded with fun and addicting new ways to play.
 				</p>
 				<p>
 					<ul>
-						<li><b>Match 3 fun on Facebook!</b></li>
-						<li><b>Fast-paced, free-flowing gameplay with an emphasis on speed</b></li>
-						<li><b>Casual time commitment: Each game only takes 60 seconds to play</b></li><br>
+						<li><b>Discover a whole new perspective of the game with 20+ game modes</b></li>
+						<li><b>Local &amp; online** multiplayer modes let up to 8 players go head-to-head</b></li>
+						<li><b>See Tetris games unfold in the real world with never-before-seen AR modes</b></li><br>
 					</ul>
 				</p>
+				<br>
 				<p>
-					Click to play <a href="<?php echo $play_link ?>" target="_blank">Feevo Blaze</a>!<br><br>
+					Find out more at the official Tetris Axis website at <a href="http://tetrisaxis.nintendo.com/" target="_blank">http://tetrisaxis.nintendo.com</a>.<br><br>
 				</p>
 			
 							
-					<a class="margincenter button_play_now" href="<?php echo $play_link ?>">Play <?php echo htmlentities($title) ?></a><br/>
-				</div>
+									</div>
 				
 				<div id="tetris_side_content" class="marginleft_10px margintop_10px">
-										
+					<?php if ($game_movie != null) echo '<div id="game_movie"></div>'; ?>					
 					<div id="game_images">
 						<div id="game_slideshow">
 							<?php
@@ -101,7 +104,8 @@ $recommendedGames = [
 			$(document).ready(function() {
 				startSlideshow();
 
-							});
+				<?php if ($game_movie != null) echo 'embedMovie(\''.$game_movie.'\');'; ?>
+			});
 		</script>
 	</body>
 </html>

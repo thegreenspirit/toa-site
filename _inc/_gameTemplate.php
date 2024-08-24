@@ -2,27 +2,23 @@
 $includepath = '../_inc';
 $dataUrl = "http://localhost/data";
 
-$title = "Feevo™ Blaze";
-$gameFeatureImage = $dataUrl."/images/games/feature_BL_FB.jpg";
-$game_movie = null; // must have all of these queries
-$play_link = 'http://apps.facebook.com/feevo-blaze/?kt_type=partner&amp;kt_st1=cross_promotion_ad&amp;kt_st2=tetrisonline_com_to_blaze&amp;kt_st3=game_lineup';
+$title = "Game Name";
+$gameFeatureImage = $dataUrl."/images/games/feature_TB_FB.jpg"; // feature_[game shortcode]_[platform]
+$game_movie = 'https://www.youtube.com/embed/GFq6wH5JR2A?fs=1&amp;hl=en_US&amp;showinfo=0&amp;rel=0&amp;version=3'; // must have all of these queries
+$play_link = '/';
 $game_slideshow = [
-	'screen_BL_FB_001.jpg',
-	'screen_BL_FB_002.jpg',
-	'screen_BL_FB_003.jpg',
-	'screen_BL_FB_004.jpg',
-	'screen_BL_FB_005.jpg',
-	'screen_BL_FB_006.jpg',
+	'screen_TB_FB_001.jpg',
+	'screen_TB_FB_002.jpg',
 ];
 
 // Max 3
 $recommendedGames = [
-	array('id' => 'feevo_facebook', 'name' => 'Feevo™', 'image' => $dataUrl.'/images/game_FV_FB.png'),
-	array('id' => 'tetris_friends_facebook', 'name' => 'Tetris® Friends', 'image' => $dataUrl.'/images/game_TF_FB.png'),
-	array('id' => 'tetris_party_wii', 'name' => 'Tetris® Party Deluxe', 'image' => $dataUrl.'/images/game_TPD_WI.png'),
+	array('id' => 'tetris_battle_facebook', 'name' => 'Tetris® Battle', 'image' => $dataUrl.'/images/game_TB_FB.png'),
+	array('id' => 'tetris_battle_facebook', 'name' => 'Tetris® Battle', 'image' => $dataUrl.'/images/game_TB_FB.png'),
+	array('id' => 'tetris_battle_facebook', 'name' => 'Tetris® Battle', 'image' => $dataUrl.'/images/game_TB_FB.png'),
 ];
 ?>
-
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
 	<head>
@@ -43,17 +39,23 @@ $recommendedGames = [
 					
 			
 				<p>
-					All you need is 60 seconds a day to experience the frantic fun of <b>Feevo Blaze</b>. The game challenges players to make matches of 3 by moving tiles on a game board. When a match is made, other pieces fall into place, making more matches as tiles cascade onto the game board at a frenzied pace.  If players can make their moves quickly, they’ll earn big point bonuses as well as extra time to compile a huge score.
+					<b>Game Name</b> is [describe game and features here]
 				</p>
 				<p>
+					Game Name is available on [platform]. <a href="<?php echo $play_link ?>" target="_blank">[game link]</a><br><br>
+				</p>
+				<p>
+					<hr noshade size="1"><br>
+				</p>
+				<p>
+					The Buzz:<br>
 					<ul>
-						<li><b>Match 3 fun on Facebook!</b></li>
-						<li><b>Fast-paced, free-flowing gameplay with an emphasis on speed</b></li>
-						<li><b>Casual time commitment: Each game only takes 60 seconds to play</b></li><br>
+						<li>"<i>[review]</i>" - [reviewer]</li><br>
+						<li>"<i>[review]</i>" - [reviewer]</li><br>
+						<li>"<i>[review]</i>" - [reviewer]</li><br>
 					</ul>
-				</p>
 				<p>
-					Click to play <a href="<?php echo $play_link ?>" target="_blank">Feevo Blaze</a>!<br><br>
+					<hr noshade size="1"><br>
 				</p>
 			
 							
@@ -61,7 +63,7 @@ $recommendedGames = [
 				</div>
 				
 				<div id="tetris_side_content" class="marginleft_10px margintop_10px">
-										
+					<?php if ($game_movie != null) echo '<div id="game_movie"></div>'; ?>					
 					<div id="game_images">
 						<div id="game_slideshow">
 							<?php
@@ -101,7 +103,8 @@ $recommendedGames = [
 			$(document).ready(function() {
 				startSlideshow();
 
-							});
+				<?php if ($game_movie != null) echo 'embedMovie(\''.$game_movie.'\');'; ?>
+			});
 		</script>
 	</body>
 </html>

@@ -22,6 +22,7 @@ $FBGameList = [
 	array('id' => 'feevo_facebook', 'name' => 'Feevo™', 'image' => $dataUrl.'/images/game_FV_FB.png'),
 	array('id' => 'blaze_facebook', 'name' => 'Feevo™ Blaze', 'image' => $dataUrl.'/images/game_BL_FB.png'),
 	array('id' => 'lost_trails_facebook', 'name' => 'Lost Trails', 'image' => $dataUrl.'/images/game_LT_FB.png'),
+	array('id' => 'monster_fantasy_facebook', 'name' => 'Monster Fantasy', 'image' => $dataUrl.'/images/game_MF_FB.png'),
 	array('id' => 'monster_fusion_facebook', 'name' => 'Monster Fusion', 'image' => $dataUrl.'/images/game_MFU_FB.png'),
 	array('id' => 'home_team_baseball_facebook', 'name' => 'Home Team Baseball', 'image' => $dataUrl.'/images/game_HTB_FB.png'),
 ];
@@ -51,11 +52,11 @@ $TDSGameList = [
 ];
 
 $DWGameList = [
-	array('id' => 'tetris_axis_3ds', 'name' => 'Tetris® Party Live', 'image' => $dataUrl.'/images/game_TPL_DW.png'),
+	array('id' => 'tetris_party_dsi', 'name' => 'Tetris® Party Live', 'image' => $dataUrl.'/images/game_TPL_DW.png'),
 ];
 
 $DSGameList = [
-	array('id' => 'tetris_axis_3ds', 'name' => 'Tetris® Party Deluxe DS', 'image' => $dataUrl.'/images/game_TPD_DS.png'),
+	array('id' => 'Tetris_Party_Deluxe_DS', 'name' => 'Tetris® Party Deluxe DS', 'image' => $dataUrl.'/images/game_TPD_DS.png'),
 ];
 ?>
 
